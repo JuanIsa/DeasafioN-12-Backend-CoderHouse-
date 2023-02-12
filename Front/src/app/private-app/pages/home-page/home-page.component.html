@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <div class="container d-flex">
+        <h4>Bienvenido {{userLoged}}</h4>
+        <button class="btn btn-danger my-5" (click)="closeSession()">Cerrrar sesión</button>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Tipo de usuario
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" (click)="userSelect()">Usurario final</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" (click)="userSelect()">Usuario administrador</a></li>
+        </ul>
+    </div>
+    <div *ngIf="administrador; else elseBlock">Administrador</div>
+    <ng-template #elseBlock>Usuario final</ng-template>
+    <front-form></front-form>
+    <button class="btn btn-danger my-5" (click)="goCart()">Ir al carrito</button>
+</div>
+<div class="container mt-5 d-flex flex-wrap">
+    <front-card *ngFor="let product of listOfProducts;let i=index" [infoProduct]="product" [administrador]="administrador"></front-card>
+</div>

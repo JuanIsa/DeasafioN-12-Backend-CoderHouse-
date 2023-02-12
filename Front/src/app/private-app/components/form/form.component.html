@@ -1,0 +1,9 @@
+<form action="" [formGroup]="formProduct" class="d-flex flex-column">
+        <input formControlName="nombre" placeholder="Nombre del producto" type="text">
+        <input formControlName="descripcion" placeholder="descrictión del producto" type="text">
+        <input formControlName="codigo" placeholder="Código del producto" type="number">
+        <input formControlName="foto" placeholder="URL de la foto" type="text">
+        <input formControlName="precio" placeholder="Precio" type="number">
+        <input formControlName="stock" placeholder="Stock" type="number">
+        <input type="submit" (click)="addprodcut()">
+</form>

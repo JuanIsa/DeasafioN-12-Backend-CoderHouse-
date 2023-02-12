@@ -1,0 +1,25 @@
+<section class="container mt-5">
+    <h3>Carrito</h3>
+
+    <div class="card" *ngFor="let item of cartItems">
+        <div class="card-header">
+            {{item.nombre}}
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{item.descripcion}}</p>
+                <footer class="blockquote-footer">Stock: {{item.stock}} <cite title="Source Title">Precio:
+                        {{item.precio}}</cite></footer>
+            </blockquote>
+        </div>
+    </div>
+    <button class="btn btn-danger my-5" (click)="goCart()">Ir al home</button>
+</section>
+<div class="container mt-5">
+    <h3>Productos disponibles</h3>
+    <div class="card" style="width: 30rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-evenly"  *ngFor="let item of listProducts">{{item.nombre}} <button class="btn btn-primary" (click)="addtocart(item.id)">Agregar al carro</button></li>
+        </ul>
+    </div>
+</div>

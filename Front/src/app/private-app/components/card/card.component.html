@@ -1,0 +1,26 @@
+<div class="card m-3" style="width: 15rem;">
+    <img src={{infoProduct.foto}} class="card-img-top" style="max-height: 150px;">
+    <div class="card-body">
+        <h5 class="card-title">{{infoProduct.nombre}}</h5>
+        <p class="card-text">{{infoProduct.descripcion}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Precio: U$S {{infoProduct.precio}}</li>
+        <li class="list-group-item">Stock: {{infoProduct.stock}}</li>
+    </ul>
+    <div class="card-body" *ngIf="administrador">
+        <button class="btn btn-danger" (click)="deleteItem()">Eliminar</button>
+        <button class="btn btn-warning ms-3" (click)="updateItem()">Actualizar</button>
+    </div>
+    <div *ngIf="updateProduct">
+        <form action="" [formGroup]="formProduct" class="container d-flex flex-column">
+            <input formControlName="nombre" placeholder="Nombre del producto" type="text">
+            <input formControlName="descripcion" placeholder="descrictión del producto" type="text">
+            <input formControlName="codigo" placeholder="Código del producto" type="number">
+            <input formControlName="foto" placeholder="URL de la foto" type="text">
+            <input formControlName="precio" placeholder="Precio" type="number">
+            <input formControlName="stock" placeholder="Stock" type="number">
+            <input type="button" (click)="update()" value="Enviar">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container mt-5 d-flex justify-content-center flex-column">
+    <form action="submit" [formGroup]="loginForm" class="d-flex flex-column">
+
+        <div class="form-floating mb-3">
+            <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" type="email" autocomplete="off">
+            <label for="floatingInput">E-mail</label>
+        </div>
+        <div class="form-floating">
+            <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" type="password" autocomplete="off">
+            <label for="floatingPassword">Password</label>
+        </div>
+   
+        <input type="submit" (click)="login()" class="btn btn-primary mt-3">
+    </form>
+    <div>
+        ¿Todavía no tenés cuenta?, registrate:
+        <button class="btn btn-danger my-5" (click)="goRegister()">Ir al registro</button>
+    </div>
+</div>
